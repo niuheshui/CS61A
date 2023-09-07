@@ -42,6 +42,7 @@ def two_of_three(i, j, k):
     >>> two_of_three(5, 5, 5)
     50
     """
+    # return min(i*i+j*j, i*i+k*k, j*j+k*k)
     return min(i, j, k) ** 2 + (add(add(i, j), k) - max(i, j, k) - min(i, j, k)) ** 2
 
 def two_of_three_syntax_check():
@@ -66,6 +67,14 @@ def largest_factor(n):
     1
     """
     "*** YOUR CODE HERE ***"
+
+    """
+    factor = n - 1
+    while factor > 0:
+        if n % foctor == 0:
+            return factor
+        factor -= 1
+    """
     for i in range(2, n + 1):
         if n % i == 0:
             return n // i
@@ -90,6 +99,20 @@ def hailstone(n):
     1
     """
     "*** YOUR CODE HERE ***"
+
+    """
+    length = 1
+    while n != 1:
+        print(n)
+        if n % 2 == 0:
+            n = n // 2      # Integer division prevents "1.0" output
+        else:
+            n = 3 * n + 1
+        length = length + 1
+    print(n)                # n is now 1
+    return length
+    """
+
     count = 0
     while True:
         count += 1
