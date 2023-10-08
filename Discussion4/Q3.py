@@ -16,9 +16,7 @@ def paths(m, n):
     >>> paths(1, 157)
     1
     """
-    if m < 0 or n < 0:
-        return 0
-    if m == 1 and n == 1:
+    if m == 1 or n == 1:
         return 1
     return paths(m - 1, n) + paths(m, n - 1)
 

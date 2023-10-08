@@ -17,7 +17,5 @@ def max_product(s):
         return 1
     elif size == 1:
         return s[0]
-    elif size == 2:
-        return max(s)
     else:
         return max(s[0] * max_product(s[2:]), max_product(s[1:]))
