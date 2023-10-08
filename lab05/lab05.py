@@ -262,7 +262,13 @@ def dejavu(t, n):
     >>> dejavu(my_tree, 5) # Sums of partial paths like 2 -> 3 don ’t count
     False
     """
-    "*** YOUR CODE HERE ***"
+    if is_leaf(t):
+        return n == label(t)
+    for b in branches(t):
+        if dejavu(b, n - label(t)):
+            return True
+    return False
+
 
 
 def hailstone_tree(n, h):
@@ -283,11 +289,11 @@ def hailstone_tree(n, h):
         5
           10
     """
-    if _________________________________:
-        return _________________________________
-    branches = _________________________________
-    if ___________ and ___________ and ___________:
-        branches += _________________________________
+    if h == 0:
+        return tree(n)
+    branches = [hailstone_tree(n * 2, h - 1)]
+    if (n - 1) % 3 == 0 and ((n - 1) // 3) % 2 == 1 and (n - 1) // 3 > 1:
+        branches += [hailstone_tree((n - 1) // 3, h - 1)]
     return tree(n, branches)
 
 
