@@ -93,6 +93,16 @@ def double_eights(n):
     >>> check(LAB_SOURCE_FILE, 'double_eights', ['While', 'For'])
     True
     """
+    """
+    Solution:
+    last, second_last = n % 10, n // 10 % 10
+    if last == 8 and second_last == 8:
+        return True
+    elif n < 100:
+        return False
+    return double_eights(n // 10)
+    """
+
     if n < 100:
         return n // 10 == 8 and n % 10 == 8
     else:
@@ -126,7 +136,7 @@ def merge(lst1, lst2):
     True
     """
     if not lst1 or not lst2:
-        return lst1 if not lst2 else lst2
+        return lst1 if not lst2 else lst2 # last1 + last2
     if lst1[0] > lst2[0]:
         lst1, lst2 = lst2, lst1
     return lst1[0:1] + merge(lst1[1:], lst2)
