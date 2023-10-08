@@ -26,7 +26,10 @@ def insert_items(s, before, after):
     >>> large_s3 is large_s
     True
     """
-    "*** YOUR CODE HERE ***"
+    indexs = [i for i in range(len(s)) if s[i] == before]
+    for i in range(len(indexs)):
+        s.insert(i + indexs[i] + 1, after);
+    return s
 
 
 def count_occurrences(t, n, x):
@@ -50,7 +53,12 @@ def count_occurrences(t, n, x):
     >>> count_occurrences(s2, 6, 6)
     2
     """
-    "*** YOUR CODE HERE ***"
+    i, count = 0, 0
+    while i < n:
+        if x == next(t):
+            count += 1
+        i += 1
+    return count
 
 
 def repeated(t, k):
@@ -73,7 +81,15 @@ def repeated(t, k):
     2
     """
     assert k > 1
-    "*** YOUR CODE HERE ***"
+    count, item = 1, next(t)
+    for e in t:
+        if e == item:
+            count += 1
+        else:
+            count, item = 1, e
+
+        if count == k:
+            return item
 
 
 def partial_reverse(s, start):
@@ -88,5 +104,8 @@ def partial_reverse(s, start):
     >>> a
     [1, 2, 7, 6, 5, 3, 4]
     """
-    "*** YOUR CODE HERE ***"
+    l, r = start, len(s) - 1
+    while l < r:
+        s[l], s[r] = s[r], s[l]
+        l, r = l + 1, r - 1
 
