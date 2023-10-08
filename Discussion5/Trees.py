@@ -51,9 +51,9 @@ def find_path(t, x):
     if label(t) == x:
         return [x]
     else:
-        path = [p for p in [find_path(b, x) for b in branches(t)] if p]
+        path = find_path(b, x)
         if path:
-            return [label(t)] + path[0]
+            return [label(t)] + path
 
 """
 Q7: Sprout Leaves
