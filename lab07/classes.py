@@ -199,11 +199,10 @@ class TutorCard(Card):
         >>> test_card.power(opponent_card) < opponent_card.power(test_card)
         True
         """
-        cards = player.hand
-        if len(cards) < 1:
-            return
-        cards.append(cards[0].copy())
-        added = True
+        added = False
+        if len(player.hand) > 0:
+            player.hand += [player.hand[0].copy]
+            added = True
         # You should add your implementation above this.
         if added:
             print(f"{self.name} allows me to add a copy of a card to my hand!")
@@ -243,19 +242,12 @@ class TACard(Card):
         >>> print(test_card.attack, test_card.defense)
         600 500
         """
-        cards = player.hand
-        if (len(cards) < 1):
-            return
-        index = 0
-        for i in range(len(cards)):
-            if type(cards[i]) != Card:
-                continue
-            if cards[i].attack > cards[index].attack:
-                index = i
-        self.attack += cards[index].attack
-        self.defense += cards[index].defense
-        best_card = cards[index]
-        cards.pop(index)
+        best_card = None
+        if len(player.hand) > 0:
+            best_card = max(player.hand, key = lambda c: c.power(opponent_card))
+            self.attack += best_card.attack
+            self.defense += best_card.defense
+            player.hand.remove(best_card)
         # You should add your implementation above this.
         if best_card:
             print(f"{self.name} discards {best_card.name} from my hand to increase its own power!")
@@ -293,12 +285,14 @@ class InstructorCard(Card):
         >>> print(test_card.attack, test_card.defense)
         -1000 -1000
         """
+        re_add = False
         self.attack -= 1000
         self.defense -= 1000
-        re_add = not (self.attack < 0 or self.defense < 0)
+        if max(self.attack, self.defense) >= 0:
+            re_add = True
+            player.hand += [self]
         # You should add your implementation above this.
         if re_add:
-            player.hand.append(self.copy())
             print(f"{self.name} returns to my hand!")
 
     def copy(self):
