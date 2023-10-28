@@ -15,9 +15,6 @@ def cumulative_mul(t):
         cumulative_mul(b)
         t.label *= b.label
 
-
-
-
 def prune_small(t, n):
     """Prune the tree mutatively, keeping only the n branches
     of each node with the smallest labels.
@@ -35,15 +32,15 @@ def prune_small(t, n):
     >>> t3
     Tree(6, [Tree(1), Tree(3, [Tree(1), Tree(2)])])
     """
-    t.branches = sorted(t.branches, key = lambda b: b.label)[:n]
+#    t.branches = sorted(t.branches, key = lambda b: b.label)[:n]
+#    for b in t.branches:
+#        prune_small(b, n)
+
+    while len(t.branches) > n:
+        largest = max(t.branches, key=lambda x: x.label)
+        t.branches.remove(largest) 
     for b in t.branches:
         prune_small(b, n)
-
-    #while ___________________________:
-    #    largest = max(_______________, key=____________________)
-    #    _________________________
-    #for __ in _____________:
-    #    ___________________
 
 
 def delete(t, x):
