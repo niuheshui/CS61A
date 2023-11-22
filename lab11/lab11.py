@@ -21,8 +21,7 @@ def calc_eval(exp):
         elif operator == 'define': # define expressions
             return eval_define(operands)
         else: # Call expressions
-            fun = OPERATORS[operator] if operator in OPERATORS else bindings[operator]
-            return calc_apply(fun, operands) # UPDATE THIS FOR Q2
+            return calc_apply(calc_eval(operator), operands.map(calc_eval)) # UPDATE THIS FOR Q2
     elif exp in OPERATORS:   # Looking up procedures
         return OPERATORS[exp]
     elif isinstance(exp, int) or isinstance(exp, bool):   # Numbers and booleans
@@ -52,17 +51,18 @@ def floor_div(args):
     >>> calc_eval(Pair("//", Pair(100, Pair(Pair("+", Pair(2, Pair(3, nil))), nil))))
     20
     """
-    if args.rest is nil:
-        return args.first
-
-    dividend = args.first
-    divisor = args.rest.first
-
-    #print('DEBUG:', dividend, divisor)
-    if isinstance(divisor, Pair):
-        divisor = calc_eval(divisor)
-
-    return floor_div(Pair(dividend // divisor, args.rest.rest))
+    #if args.rest is nil:
+    #    return args.first
+    #dividend = args.first
+    #divisor = args.rest.first
+    #return floor_div(Pair(dividend // divisor, args.rest.rest))
+    result = args.first
+    divisors = args.rest
+    while divisors != nil:
+        divisor = divisors.first
+        result //= divisor
+        divisors = divisors.rest
+    return result
 
 
 scheme_t = True   # Scheme's #t
@@ -85,16 +85,23 @@ def eval_and(expressions):
     >>> calc_eval(Pair("and", nil))
     True
     """
-    if expressions is nil:
-        return True
+    #if expressions is nil:
+    #    return True
 
-    exp = expressions.first
+    #exp = expressions.first
 
-    val = calc_eval(exp)
-    if val is False or expressions.rest is nil:
-        return val 
-    else:
-        return eval_and(expressions.rest)
+    #val = calc_eval(exp)
+    #if val is False or expressions.rest is nil:
+    #    return val 
+    #else:
+    #    return eval_and(expressions.rest)
+    curr, val = expressions, True
+    while curr is not nil:
+        val = calc_eval(curr.first)
+        if val is scheme_f:
+            return scheme_f
+        curr = curr.rest
+    return val
 
 
 bindings = {}
@@ -114,10 +121,9 @@ def eval_define(expressions):
     >>> calc_eval(Pair("d", Pair(4, Pair(2, nil))))
     2
     """
-    var_name = expressions.first
-    var_value = calc_eval(expressions.rest.first)
-    bindings[var_name] = var_value
-    return var_name
+    symbol, value = expressions.first, calc_eval(expressions.rest.first)
+    bindings[symbol] = value
+    return symbol
     
 
 OPERATORS = { "//": floor_div, "+": addition, "-": subtraction, "*": multiplication, "/": division }
