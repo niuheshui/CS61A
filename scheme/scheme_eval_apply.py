@@ -33,7 +33,9 @@ def scheme_eval(expr, env, _=None): # Optional third argument is ignored
         return scheme_forms.SPECIAL_FORMS[first](rest, env)
     else:
         # BEGIN PROBLEM 3
-        "*** YOUR CODE HERE ***"
+        procedure = scheme_eval(first, env)
+        return scheme_apply(procedure, rest.map(lambda p: scheme_eval(p, env)), Frame(env))
+
         # END PROBLEM 3
 
 def pair2py_list(pair):
