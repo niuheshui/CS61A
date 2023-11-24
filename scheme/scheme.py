@@ -30,6 +30,7 @@ def read_eval_print_loop(next_line, env, interactive=False, quiet=False,
             while src.more_on_line():
                 expression = scheme_read(src)
                 result = scheme_eval(expression, env)
+                #print('result type is:', type(result))
                 if not quiet and result is not None:
                     print(repl_str(result))
         except (SchemeError, SyntaxError, ValueError, RuntimeError) as err:

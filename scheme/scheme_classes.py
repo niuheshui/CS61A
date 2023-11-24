@@ -29,6 +29,17 @@ class Frame:
         self.bindings[symbol] = value
         # END PROBLEM 1
 
+    def define_all(self, symbols, values):
+        if len(symbols) != len(values):
+            raise SchemeError('Incorrect number of arguments to function call')
+
+        try:
+            for symbol, value in zip(symbols, values):
+                self.define(symbol, value)
+        except TypeError as err:
+            pass
+
+
     def lookup(self, symbol):
         """Return the value bound to SYMBOL. Errors if SYMBOL is not found."""
         # BEGIN PROBLEM 1
@@ -54,7 +65,9 @@ class Frame:
         if len(formals) != len(vals):
             raise SchemeError('Incorrect number of arguments to function call')
         # BEGIN PROBLEM 8
-        "*** YOUR CODE HERE ***"
+        child_frame = Frame(self)
+        child_frame.define_all(formals, vals)
+        return child_frame
         # END PROBLEM 8
 
 ##############

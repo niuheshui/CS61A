@@ -16,6 +16,13 @@ class Pair:
     def __repr__(self):
         return 'Pair({0}, {1})'.format(repr(self.first), repr(self.rest))
 
+    def __iter__(self):
+        def gen(p):
+            while isinstance(p, Pair):
+                yield p.first
+                p = p.rest
+        return gen(self)
+
     def __str__(self):
         s = '(' + repl_str(self.first)
         rest = self.rest
