@@ -46,12 +46,12 @@
 (define (let-to-lambda expr)
   (cond ((atom? expr)
          ; BEGIN OPTIONAL PROBLEM 2
-         'replace-this-line
+        expr
          ; END OPTIONAL PROBLEM 2
          )
         ((quoted? expr)
          ; BEGIN OPTIONAL PROBLEM 2
-         'replace-this-line
+         expr
          ; END OPTIONAL PROBLEM 2
          )
         ((or (lambda? expr)
@@ -60,23 +60,61 @@
                (params (cadr expr))
                (body   (cddr expr)))
            ; BEGIN OPTIONAL PROBLEM 2
-           'replace-this-line
+            (append (cons form (cons params nil)) (map let-to-lambda body))
            ; END OPTIONAL PROBLEM 2
            ))
         ((let? expr)
          (let ((values (cadr expr))
                (body   (cddr expr)))
            ; BEGIN OPTIONAL PROBLEM 2
-           'replace-this-line
+           (define tmp (zip values))
+           (define args (car tmp))
+           (define vals (cadr tmp))
+           (append (cons (append (cons 'lambda (cons args nil)) (map let-to-lambda body)) nil) vals)
            ; END OPTIONAL PROBLEM 2
            ))
         (else
          ; BEGIN OPTIONAL PROBLEM 2
-         'replace-this-line
+         expr
          ; END OPTIONAL PROBLEM 2
          )))
 
 ; Some utility functions that you may find useful to implement for let-to-lambda
 
+;(
+;     (x 1) 
+;     (y (+ 1 2)) 
+;     (z (* 1 (+ 2 1)))
+;)
+
+
+ 
+
 (define (zip pairs)
-  'replace-this-line)
+  
+ (define (firsts pairs)
+        (if (null? pairs) nil
+            (cons (car (car pairs)) (firsts (cdr pairs)))))
+    (define (nexts pairs) 
+        (if (null? pairs) nil
+            (cons  (cdr (car pairs)) (nexts (cdr pairs)))))
+
+(define (check pairs)
+    (cond
+        ((null? pairs) #f)
+        ((null? (car pairs)) #t)
+        (else (check (cdr pairs)))))
+    (define (loop pairs)
+        (if (check pairs) nil
+            (append (cons (firsts pairs) nil) (loop (nexts pairs)))))
+    (loop pairs)
+  )
+
+
+
+;(append (cons (firsts '((1 2 3) (4 5 6))) nil) 
+;        (append (cons (firsts '((2 3) (5 6))) nil)
+;                (append (cons (firsts '((3) (6))) nil)
+;                        (append (cons (firsts '(() ())) nil)))))
+
+
