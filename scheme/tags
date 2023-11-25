@@ -1,0 +1,286 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BUILTINS	./scheme_builtins.py	/^BUILTINS = []$/;"	v
+BuiltinProcedure	./scheme_classes.py	/^class BuiltinProcedure(Procedure):$/;"	c
+DELIMITERS	./scheme_tokens.py	/^DELIMITERS = _SINGLE_CHAR_TOKENS | {'.', ',', ',@'}$/;"	v
+Frame	./scheme_classes.py	/^class Frame:$/;"	c
+LambdaProcedure	./scheme_classes.py	/^class LambdaProcedure(Procedure):$/;"	c
+MuProcedure	./scheme_classes.py	/^class MuProcedure(Procedure):$/;"	c
+Pair	./pair.py	/^class Pair:$/;"	c
+Procedure	./scheme_classes.py	/^class Procedure:$/;"	c
+SPECIAL_FORMS	./scheme_forms.py	/^SPECIAL_FORMS = {$/;"	v
+SchemeError	./scheme_classes.py	/^class SchemeError(Exception):$/;"	c
+Unevaluated	./scheme_eval_apply.py	/^class Unevaluated:$/;"	c
+_MAX_TOKEN_LENGTH	./scheme_tokens.py	/^_MAX_TOKEN_LENGTH = 50$/;"	v
+_NUMERAL_STARTS	./scheme_tokens.py	/^_NUMERAL_STARTS = set("0123456789") | set('+-.')$/;"	v
+_PREFIX	./ucb.py	/^_PREFIX = ''$/;"	v
+_SINGLE_CHAR_TOKENS	./scheme_tokens.py	/^_SINGLE_CHAR_TOKENS = set("()[]'`")$/;"	v
+_STRING_DELIMS	./scheme_tokens.py	/^_STRING_DELIMS = set('"')$/;"	v
+_SYMBOL_CHARS	./scheme_tokens.py	/^_SYMBOL_CHARS = (set('!$%&*\/:<=>?@^_~') | set("abcdefghijklmnopqrstuvwxyz") |$/;"	v
+_TOKEN_END	./scheme_tokens.py	/^_TOKEN_END = _WHITESPACE | _SINGLE_CHAR_TOKENS | _STRING_DELIMS | {',', ',@'}$/;"	v
+_WHITESPACE	./scheme_tokens.py	/^_WHITESPACE = set(' \\t\\n\\r')$/;"	v
+__eq__	./pair.py	/^    def __eq__(self, p):$/;"	m	class:Pair	file:
+__init__	./pair.py	/^    def __init__(self, first, rest):$/;"	m	class:Pair
+__init__	./scheme_classes.py	/^    def __init__(self, formals, body):$/;"	m	class:MuProcedure
+__init__	./scheme_classes.py	/^    def __init__(self, formals, body, env):$/;"	m	class:LambdaProcedure
+__init__	./scheme_classes.py	/^    def __init__(self, parent):$/;"	m	class:Frame
+__init__	./scheme_classes.py	/^    def __init__(self, py_func, need_env=False, name='builtin'):$/;"	m	class:BuiltinProcedure
+__init__	./scheme_eval_apply.py	/^    def __init__(self, expr, env):$/;"	m	class:Unevaluated
+__len__	./pair.py	/^    def __len__(self):$/;"	m	class:Pair	file:
+__len__	./pair.py	/^    def __len__(self):$/;"	m	class:nil	file:
+__repr__	./pair.py	/^    def __repr__(self):$/;"	m	class:Pair	file:
+__repr__	./pair.py	/^    def __repr__(self):$/;"	m	class:nil	file:
+__repr__	./scheme_classes.py	/^    def __repr__(self):$/;"	m	class:Frame	file:
+__repr__	./scheme_classes.py	/^    def __repr__(self):$/;"	m	class:LambdaProcedure	file:
+__repr__	./scheme_classes.py	/^    def __repr__(self):$/;"	m	class:MuProcedure	file:
+__str__	./pair.py	/^    def __str__(self):$/;"	m	class:Pair	file:
+__str__	./pair.py	/^    def __str__(self):$/;"	m	class:nil	file:
+__str__	./scheme_classes.py	/^    def __str__(self):$/;"	m	class:BuiltinProcedure	file:
+__str__	./scheme_classes.py	/^    def __str__(self):$/;"	m	class:LambdaProcedure	file:
+__str__	./scheme_classes.py	/^    def __str__(self):$/;"	m	class:MuProcedure	file:
+_arith	./scheme_builtins.py	/^def _arith(fn, init, vals):$/;"	f
+_check_nums	./scheme_builtins.py	/^def _check_nums(*vals):$/;"	f
+_ensure_int	./scheme_builtins.py	/^def _ensure_int(x):$/;"	f
+_numcomp	./scheme_builtins.py	/^def _numcomp(op, x, y):$/;"	f
+_save	./scheme_builtins.py	/^def _save(path):$/;"	f
+_title	./scheme_builtins.py	/^def _title():$/;"	f
+_tscheme_prep	./scheme_builtins.py	/^def _tscheme_prep():$/;"	f
+a	./tests.scm	/^(define a 1)$/;"	f
+a-plus-abs-b	./tests.scm	/^(define (a-plus-abs-b a b)$/;"	f
+abs	./tests.scm	/^(define (abs x)$/;"	f
+accumulate	./tests.scm	/^(define (accumulate op initial sequence)$/;"	f
+add	./scheme_builtins.py	/^    def add(py_func):$/;"	f	function:builtin
+add-rat	./tests.scm	/^(define (add-rat x y)$/;"	f
+add_builtins	./scheme.py	/^def add_builtins(frame, funcs_and_names):$/;"	f
+apply-twice	./tests.scm	/^(define apply-twice (lambda (f) (compose f f)))$/;"	f
+attempt_create_pillow_canvas	./scheme_builtins.py	/^def attempt_create_pillow_canvas():$/;"	f
+attempt_create_tk_canvas	./scheme_builtins.py	/^def attempt_create_tk_canvas():$/;"	f
+attempt_install_tk_turtle	./scheme_builtins.py	/^def attempt_install_tk_turtle():$/;"	f
+average	./tests.scm	/^(define (average x y)$/;"	f
+b	./tests.scm	/^(define b 2)$/;"	f
+builtin	./scheme_builtins.py	/^def builtin(*names, need_env=False):$/;"	f
+caar	./questions.scm	/^(define (caar x) (car (car x)))$/;"	f
+cadr	./questions.scm	/^(define (cadr x) (car (cdr x)))$/;"	f
+cadr	./tests.scm	/^(define (cadr s) (car (cdr s)))$/;"	f
+cadrs	./tests.scm	/^(define (cadrs s) (map cadr s))$/;"	f
+cars	./tests.scm	/^(define (cars s) (map car s))$/;"	f
+cdar	./questions.scm	/^(define (cdar x) (cdr (car x)))$/;"	f
+cddr	./questions.scm	/^(define (cddr x) (cdr (cdr x)))$/;"	f
+chain	./scheme_tokens.py	/^def chain(*iters):$/;"	f
+check-special	./questions.scm	/^(define (check-special form)$/;"	f
+check_token_length_warning	./scheme_tokens.py	/^def check_token_length_warning(token, length):$/;"	f
+circumference	./tests.scm	/^(define circumference (* 2 pi radius))$/;"	f
+combine	./tests.scm	/^(define (combine f)$/;"	f
+complete_apply	./scheme_eval_apply.py	/^def complete_apply(procedure, args, env):$/;"	f
+compose	./tests.scm	/^(define compose (lambda (f g) (lambda (x) (f (g x)))))$/;"	f
+count-leaves	./tests.scm	/^(define (count-leaves x)$/;"	f
+count_tokens	./scheme_tokens.py	/^def count_tokens(inp):$/;"	f
+create_global_frame	./scheme.py	/^def create_global_frame():$/;"	f
+cube	./tests.scm	/^(define (cube x) (* x x x))$/;"	f
+define	./scheme_classes.py	/^    def define(self, symbol, value):$/;"	m	class:Frame
+define?	./questions.scm	/^(define define? (check-special 'define))$/;"	f
+denom	./tests.scm	/^(define (denom x) (car (cdr x)))$/;"	f
+div-rat	./tests.scm	/^(define (div-rat x y)$/;"	f
+do_and_form	./scheme_forms.py	/^def do_and_form(expressions, env):$/;"	f
+do_begin_form	./scheme_forms.py	/^def do_begin_form(expressions, env):$/;"	f
+do_cond_form	./scheme_forms.py	/^def do_cond_form(expressions, env):$/;"	f
+do_define_form	./scheme_forms.py	/^def do_define_form(expressions, env):$/;"	f
+do_if_form	./scheme_forms.py	/^def do_if_form(expressions, env):$/;"	f
+do_lambda_form	./scheme_forms.py	/^def do_lambda_form(expressions, env):$/;"	f
+do_let_form	./scheme_forms.py	/^def do_let_form(expressions, env):$/;"	f
+do_mu_form	./scheme_forms.py	/^def do_mu_form(expressions, env):$/;"	f
+do_or_form	./scheme_forms.py	/^def do_or_form(expressions, env):$/;"	f
+do_quasiquote_form	./scheme_forms.py	/^def do_quasiquote_form(expressions, env):$/;"	f
+do_quote_form	./scheme_forms.py	/^def do_quote_form(expressions, env):$/;"	f
+do_unquote	./scheme_forms.py	/^def do_unquote(expressions, env):$/;"	f
+double	./tests.scm	/^(define double (lambda (x) (* 2 x)))$/;"	f
+enumerate	./questions.scm	/^(define (enumerate s)$/;"	f
+enumerate-interval	./tests.scm	/^(define (enumerate-interval low high)$/;"	f
+enumerate-tree	./tests.scm	/^(define (enumerate-tree tree)$/;"	f
+equal-rat?	./tests.scm	/^(define (equal-rat? x y)$/;"	f
+eval_all	./scheme_eval_apply.py	/^def eval_all(expressions, env):$/;"	f
+f	./tests.scm	/^(define (f a)$/;"	f
+f	./tests.scm	/^(define (f x y)$/;"	f
+f	./tests.scm	/^(define (f x) (+ x 2))$/;"	f
+f	./tests.scm	/^(define-macro (f x) (car x))$/;"	f
+fact	./tests.scm	/^(define fact (lambda (n) (if (<= n 1) 1 (* n (fact (- n 1))))))$/;"	f
+filter	./tests.scm	/^(define (filter predicate sequence)$/;"	f
+flatmap	./pair.py	/^    def flatmap(self, fn):$/;"	m	class:Pair
+flatmap	./pair.py	/^    def flatmap(self, fn):$/;"	m	class:nil
+for	./tests.scm	/^(define-macro (for formal iterable body)$/;"	f
+gcd	./tests.scm	/^(define (gcd a b)$/;"	f
+good-enough?	./tests.scm	/^(define (good-enough? guess x)$/;"	f
+handler	./ucb.py	/^    def handler(signum, frame):$/;"	f	function:interact
+hyp	./tests.scm	/^(define (hyp a b)$/;"	f
+identity	./tests.scm	/^(define (identity x) x)$/;"	f
+improve	./tests.scm	/^(define (improve guess x)$/;"	f
+inc	./tests.scm	/^(define (inc n) (+ n 1))$/;"	f
+interact	./ucb.py	/^def interact(msg=None):$/;"	f
+is_scheme_false	./scheme_utils.py	/^def is_scheme_false(val):$/;"	f
+is_scheme_true	./scheme_utils.py	/^def is_scheme_true(val):$/;"	f
+lambda?	./questions.scm	/^(define lambda? (check-special 'lambda))$/;"	f
+leet	./tests.scm	/^(define-macro (leet bindings expr)$/;"	f
+len	./tests.scm	/^(define (len s)$/;"	f
+let-to-lambda	./questions.scm	/^(define (let-to-lambda expr)$/;"	f
+let?	./questions.scm	/^(define let?    (check-special 'let))$/;"	f
+log	./ucb.py	/^def log(message):$/;"	f
+log_current_line	./ucb.py	/^def log_current_line():$/;"	f
+lookup	./scheme_classes.py	/^    def lookup(self, symbol):$/;"	m	class:Frame
+loop	./tests.scm	/^(define (loop) (loop))$/;"	f
+main	./ucb.py	/^def main(fn):$/;"	f
+make-rat	./tests.scm	/^(define (make-rat n d) (list n d))$/;"	f
+make-rat	./tests.scm	/^(define (make-rat n d)$/;"	f
+make_child_frame	./scheme_classes.py	/^    def make_child_frame(self, formals, vals):$/;"	m	class:Frame
+make_let_frame	./scheme_forms.py	/^def make_let_frame(bindings, env):$/;"	f
+map	./pair.py	/^    def map(self, fn):$/;"	m	class:Pair
+map	./pair.py	/^    def map(self, fn):$/;"	m	class:nil
+map	./tests.scm	/^(define (map f lst)$/;"	f
+map	./tests.scm	/^(define (map proc items)$/;"	f
+memq	./tests.scm	/^(define (memq item x)$/;"	f
+merge	./questions.scm	/^(define (merge ordered? s1 s2)$/;"	f
+mul-rat	./tests.scm	/^(define (mul-rat x y)$/;"	f
+my-equal?	./tests.scm	/^(define (my-equal? x y)$/;"	f
+next_candidate_token	./scheme_tokens.py	/^def next_candidate_token(line, k):$/;"	f
+next_line	./scheme.py	/^            def next_line():$/;"	f	function:run
+next_line	./scheme_builtins.py	/^    def next_line():$/;"	f	function:scheme_load
+nil	./pair.py	/^class nil:$/;"	c
+nil	./pair.py	/^nil = nil() # Assignment hides the nil class; there is only one instance$/;"	v
+number_fn	./scheme_builtins.py	/^def number_fn(module, name, fallback=None):$/;"	f
+numer	./tests.scm	/^(define (numer x) (car x))$/;"	f
+odd?	./tests.scm	/^(define (odd? x) (= 1 (remainder x 2)))$/;"	f
+one-half	./tests.scm	/^(define one-half (make-rat 1 2))$/;"	f
+one-third	./tests.scm	/^(define one-third (make-rat 1 3))$/;"	f
+one-through-four	./tests.scm	/^(define one-through-four (list 1 2 3 4))$/;"	f
+optimize_tail_calls	./scheme_eval_apply.py	/^def optimize_tail_calls(unoptimized_scheme_eval):$/;"	f
+optimized_eval	./scheme_eval_apply.py	/^    def optimized_eval(expr, env, tail=False):$/;"	f	function:optimize_tail_calls
+pair2py_list	./scheme_eval_apply.py	/^def pair2py_list(pair):$/;"	f
+pi	./tests.scm	/^(define pi 3.14159)$/;"	f
+print-rat	./tests.scm	/^(define (print-rat x)$/;"	f
+quasiquote_item	./scheme_forms.py	/^    def quasiquote_item(val, env, level):$/;"	f	function:do_quasiquote_form
+quoted?	./questions.scm	/^(define quoted? (check-special 'quote))$/;"	f
+radius	./tests.scm	/^(define radius 10)$/;"	f
+read_eval_print_loop	./scheme.py	/^def read_eval_print_loop(next_line, env, interactive=False, quiet=False,$/;"	f
+repl_str	./pair.py	/^def repl_str(val):$/;"	f
+riff-shuffle	./tests.scm	/^(define riff-shuffle (lambda (deck) (begin$/;"	f
+run	./scheme.py	/^def run(*argv):$/;"	f
+run	./scheme_tokens.py	/^def run(*args):$/;"	f
+scale-list	./tests.scm	/^(define (scale-list items factor)$/;"	f
+scheme_abs	./scheme_builtins.py	/^def scheme_abs(val0):$/;"	f
+scheme_add	./scheme_builtins.py	/^def scheme_add(*vals):$/;"	f
+scheme_append	./scheme_builtins.py	/^def scheme_append(*vals):$/;"	f
+scheme_apply	./scheme_eval_apply.py	/^def scheme_apply(procedure, args, env):$/;"	f
+scheme_atomp	./scheme_utils.py	/^def scheme_atomp(x):$/;"	f
+scheme_booleanp	./scheme_utils.py	/^def scheme_booleanp(x):$/;"	f
+scheme_car	./scheme_builtins.py	/^def scheme_car(x):$/;"	f
+scheme_cdr	./scheme_builtins.py	/^def scheme_cdr(x):$/;"	f
+scheme_cdr_stream	./scheme_builtins.py	/^def scheme_cdr_stream(x):$/;"	f
+scheme_cons	./scheme_builtins.py	/^def scheme_cons(x, y):$/;"	f
+scheme_display	./scheme_builtins.py	/^def scheme_display(*vals):$/;"	f
+scheme_displayln	./scheme_builtins.py	/^def scheme_displayln(*vals):$/;"	f
+scheme_div	./scheme_builtins.py	/^def scheme_div(val0, *vals):$/;"	f
+scheme_eq	./scheme_builtins.py	/^def scheme_eq(x, y):$/;"	f
+scheme_eqp	./scheme_builtins.py	/^def scheme_eqp(x, y):$/;"	f
+scheme_equalp	./scheme_builtins.py	/^def scheme_equalp(x, y):$/;"	f
+scheme_error	./scheme_builtins.py	/^def scheme_error(msg=None):$/;"	f
+scheme_eval	./scheme_eval_apply.py	/^def scheme_eval(expr, env, _=None): # Optional third argument is ignored$/;"	f
+scheme_evenp	./scheme_builtins.py	/^def scheme_evenp(x):$/;"	f
+scheme_exit	./scheme_builtins.py	/^def scheme_exit():$/;"	f
+scheme_expt	./scheme_builtins.py	/^def scheme_expt(val0, val1):$/;"	f
+scheme_filter	./scheme_builtins.py	/^def scheme_filter(fn, s, env):$/;"	f
+scheme_fn	./scheme_builtins.py	/^    def scheme_fn(*vals):$/;"	f	function:number_fn
+scheme_force	./scheme_builtins.py	/^def scheme_force(x):$/;"	f
+scheme_ge	./scheme_builtins.py	/^def scheme_ge(x, y):$/;"	f
+scheme_gt	./scheme_builtins.py	/^def scheme_gt(x, y):$/;"	f
+scheme_integerp	./scheme_builtins.py	/^def scheme_integerp(x):$/;"	f
+scheme_le	./scheme_builtins.py	/^def scheme_le(x, y):$/;"	f
+scheme_length	./scheme_builtins.py	/^def scheme_length(x):$/;"	f
+scheme_list	./scheme_builtins.py	/^def scheme_list(*vals):$/;"	f
+scheme_listp	./scheme_utils.py	/^def scheme_listp(x):$/;"	f
+scheme_load	./scheme_builtins.py	/^def scheme_load(*args):$/;"	f
+scheme_load_all	./scheme_builtins.py	/^def scheme_load_all(directory, env):$/;"	f
+scheme_lt	./scheme_builtins.py	/^def scheme_lt(x, y):$/;"	f
+scheme_map	./scheme_builtins.py	/^def scheme_map(fn, s, env):$/;"	f
+scheme_modulo	./scheme_builtins.py	/^def scheme_modulo(val0, val1):$/;"	f
+scheme_mul	./scheme_builtins.py	/^def scheme_mul(*vals):$/;"	f
+scheme_newline	./scheme_builtins.py	/^def scheme_newline():$/;"	f
+scheme_not	./scheme_builtins.py	/^def scheme_not(x):$/;"	f
+scheme_nullp	./scheme_utils.py	/^def scheme_nullp(x):$/;"	f
+scheme_numberp	./scheme_utils.py	/^def scheme_numberp(x):$/;"	f
+scheme_oddp	./scheme_builtins.py	/^def scheme_oddp(x):$/;"	f
+scheme_open	./scheme_builtins.py	/^def scheme_open(filename):$/;"	f
+scheme_pairp	./scheme_builtins.py	/^def scheme_pairp(x):$/;"	f
+scheme_print	./scheme_builtins.py	/^def scheme_print(*vals):$/;"	f
+scheme_print_return	./scheme_builtins.py	/^def scheme_print_return(val1, val2):$/;"	f
+scheme_procedurep	./scheme_utils.py	/^def scheme_procedurep(x):$/;"	f
+scheme_promisep	./scheme_builtins.py	/^def scheme_promisep(x):$/;"	f
+scheme_quo	./scheme_builtins.py	/^def scheme_quo(val0, val1):$/;"	f
+scheme_reduce	./scheme_builtins.py	/^def scheme_reduce(fn, s, env):$/;"	f
+scheme_remainder	./scheme_builtins.py	/^def scheme_remainder(val0, val1):$/;"	f
+scheme_set_car	./scheme_builtins.py	/^def scheme_set_car(x, y):$/;"	f
+scheme_set_cdr	./scheme_builtins.py	/^def scheme_set_cdr(x, y):$/;"	f
+scheme_stringp	./scheme_utils.py	/^def scheme_stringp(x):$/;"	f
+scheme_sub	./scheme_builtins.py	/^def scheme_sub(val0, *vals):$/;"	f
+scheme_symbolp	./scheme_utils.py	/^def scheme_symbolp(x):$/;"	f
+scheme_valid_cdrp	./scheme_builtins.py	/^def scheme_valid_cdrp(x):$/;"	f
+scheme_zerop	./scheme_builtins.py	/^def scheme_zerop(x):$/;"	f
+self_evaluating	./scheme_utils.py	/^def self_evaluating(expr):$/;"	f
+size	./tests.scm	/^(define size 2)$/;"	f
+sqrt	./tests.scm	/^(define (sqrt x)$/;"	f
+sqrt-iter	./tests.scm	/^(define (sqrt-iter guess x)$/;"	f
+square	./tests.scm	/^(define (square x) (* x x))$/;"	f
+square	./tests.scm	/^(define square (lambda (x) (* x x))) ; See Section 1.3.2$/;"	f
+sub-rat	./tests.scm	/^(define (sub-rat x y)$/;"	f
+sum	./tests.scm	/^(define (sum n total)$/;"	f
+sum	./tests.scm	/^(define (sum term a next b)$/;"	f
+sum-cubes	./tests.scm	/^(define (sum-cubes a b)$/;"	f
+sum-integers	./tests.scm	/^(define (sum-integers a b)$/;"	f
+sum-of-squares	./tests.scm	/^(define (sum-of-squares x y)$/;"	f
+tokenize_line	./scheme_tokens.py	/^def tokenize_line(line):$/;"	f
+tokenize_lines	./scheme_tokens.py	/^def tokenize_lines(inp):$/;"	f
+trace	./ucb.py	/^def trace(fn):$/;"	f
+tscheme_backward	./scheme_builtins.py	/^def tscheme_backward(n):$/;"	f
+tscheme_begin_fill	./scheme_builtins.py	/^def tscheme_begin_fill():$/;"	f
+tscheme_bgcolor	./scheme_builtins.py	/^def tscheme_bgcolor(c):$/;"	f
+tscheme_circle	./scheme_builtins.py	/^def tscheme_circle(r, extent=None):$/;"	f
+tscheme_clear	./scheme_builtins.py	/^def tscheme_clear():$/;"	f
+tscheme_color	./scheme_builtins.py	/^def tscheme_color(c):$/;"	f
+tscheme_end_fill	./scheme_builtins.py	/^def tscheme_end_fill():$/;"	f
+tscheme_exitonclick	./scheme_builtins.py	/^def tscheme_exitonclick():$/;"	f
+tscheme_forward	./scheme_builtins.py	/^def tscheme_forward(n):$/;"	f
+tscheme_hideturtle	./scheme_builtins.py	/^def tscheme_hideturtle():$/;"	f
+tscheme_left	./scheme_builtins.py	/^def tscheme_left(n):$/;"	f
+tscheme_pendown	./scheme_builtins.py	/^def tscheme_pendown():$/;"	f
+tscheme_penup	./scheme_builtins.py	/^def tscheme_penup():$/;"	f
+tscheme_pixel	./scheme_builtins.py	/^def tscheme_pixel(x, y, c):$/;"	f
+tscheme_pixelsize	./scheme_builtins.py	/^def tscheme_pixelsize(size):$/;"	f
+tscheme_rgb	./scheme_builtins.py	/^def tscheme_rgb(red, green, blue):$/;"	f
+tscheme_right	./scheme_builtins.py	/^def tscheme_right(n):$/;"	f
+tscheme_screen_height	./scheme_builtins.py	/^def tscheme_screen_height():$/;"	f
+tscheme_screen_width	./scheme_builtins.py	/^def tscheme_screen_width():$/;"	f
+tscheme_setheading	./scheme_builtins.py	/^def tscheme_setheading(h):$/;"	f
+tscheme_setposition	./scheme_builtins.py	/^def tscheme_setposition(x, y):$/;"	f
+tscheme_showturtle	./scheme_builtins.py	/^def tscheme_showturtle():$/;"	f
+tscheme_speed	./scheme_builtins.py	/^def tscheme_speed(s):$/;"	f
+tscheme_write_to_file	./scheme_builtins.py	/^def tscheme_write_to_file(path):$/;"	f
+valid_symbol	./scheme_tokens.py	/^def valid_symbol(s):$/;"	f
+validate_and_add	./scheme_utils.py	/^    def validate_and_add(symbol, is_last):$/;"	f	function:validate_formals
+validate_form	./scheme_utils.py	/^def validate_form(expr, min, max=float('inf')):$/;"	f
+validate_formals	./scheme_utils.py	/^def validate_formals(formals):$/;"	f
+validate_procedure	./scheme_utils.py	/^def validate_procedure(procedure):$/;"	f
+validate_type	./scheme_utils.py	/^def validate_type(val, predicate, k, name):$/;"	f
+wrapped	./ucb.py	/^    def wrapped(*args, **kwds):$/;"	f	function:trace
+x	./tests.scm	/^(define x (+ 2 8))$/;"	f
+x	./tests.scm	/^(define x (begin (print 1) 2))$/;"	f
+x	./tests.scm	/^(define x (cons (list 1 2) (list 3 4)))$/;"	f
+x	./tests.scm	/^(define x (cons 1 (cons 2 nil)))$/;"	f
+x	./tests.scm	/^(define x (list 1 2))$/;"	f
+x	./tests.scm	/^(define x 2)$/;"	f
+x	./tests.scm	/^(define x 5)$/;"	f
+y	./tests.scm	/^(define y (list 3 4))$/;"	f
+z	./tests.scm	/^(define z (cons x y))$/;"	f
+zip	./questions.scm	/^(define (zip pairs)$/;"	f
+zip	./tests.scm	/^(define zip (combine cons))$/;"	f
