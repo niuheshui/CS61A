@@ -87,14 +87,9 @@
 ;     (z (* 1 (+ 2 1)))
 ;)
 
-
- 
-
-(define (zip pairs)
-  
- (define (firsts pairs)
-        (if (null? pairs) nil
-            (cons (car (car pairs)) (firsts (cdr pairs)))))
+(define (firsts pairs)
+    (if (null? pairs) nil
+        (cons (car (car pairs)) (firsts (cdr pairs)))))
     (define (nexts pairs) 
         (if (null? pairs) nil
             (cons  (cdr (car pairs)) (nexts (cdr pairs)))))
@@ -104,11 +99,11 @@
         ((null? pairs) #f)
         ((null? (car pairs)) #t)
         (else (check (cdr pairs)))))
-    (define (loop pairs)
-        (if (check pairs) nil
-            (append (cons (firsts pairs) nil) (loop (nexts pairs)))))
-    (loop pairs)
-  )
+ 
+
+(define (zip pairs)
+    (if (check pairs) nil
+        (append (cons (firsts pairs) nil) (zip (nexts pairs)))))
 
 
 
