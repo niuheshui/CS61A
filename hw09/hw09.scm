@@ -28,10 +28,14 @@
 (define-macro (switch expr cases)
   (switch-to-cond (list 'switch expr cases)))
 
+
+;scm> (switch-to-cond `(switch (+ 1 1) ((1 2) (2 4) (3 6))))
+;(cond ((equal? (+ 1 1) 1) 2) ((equal? (+ 1 1) 2) 4) ((equal? (+ 1 1) 3) 6))
+
 (define (switch-to-cond switch-expr)
-  (cons _________
+  (cons 'cond 
         (map
-         (lambda (case) (cons _______________ (cdr case)))
+         (lambda (case) (cons (list 'equal? (car (cdr switch-expr)) (car case)) (cdr case)))
          (car (cdr (cdr switch-expr))))))
 
 (define (min x y)
@@ -52,5 +56,13 @@
       #t
       #f))
 
+
+;scm> (switch-factors 1)
+;one
+;scm> (switch-factor 17)
+;prime
+;scm> (switch-factor 9)
+;composite
+
 (define (switch-factors n)
-  (switch _________ __________________))
+  (switch (min 3 (count is-factor n n)) ((1 'one) (2 'prime) (3 'composite))))
