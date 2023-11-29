@@ -26,24 +26,32 @@ CREATE TABLE sizes AS
 
 -- All dogs with parents ordered by decreasing height of their parent
 CREATE TABLE by_parent_height AS
-  SELECT "REPLACE THIS LINE WITH YOUR SOLUTION";
+  SELECT parents.child
+    FROM dogs, parents
+    WHERE dogs.name = parents.parent
+    ORDER BY dogs.height DESC;
+
 
 
 -- The size of each dog
 CREATE TABLE size_of_dogs AS
-  SELECT "REPLACE THIS LINE WITH YOUR SOLUTION";
+    SELECT dogs.name, sizes.size
+      FROM dogs, sizes
+      WHERE dogs.height > sizes.min 
+        AND dogs.height <= sizes.max;
 
 
--- Filling out this helper table is optional
-CREATE TABLE siblings AS
-  SELECT "REPLACE THIS LINE WITH YOUR SOLUTION";
 
--- Sentences about siblings that are the same size
-CREATE TABLE sentences AS
-  SELECT "REPLACE THIS LINE WITH YOUR SOLUTION";
+-- filling out this helper table is optional
+create table siblings as
+  select "replace this line with your solution";
+
+-- sentences about siblings that are the same size
+create table sentences as
+  select "replace this line with your solution";
 
 
--- Height range for each fur type where all of the heights differ by no more than 30% from the average height
-CREATE TABLE low_variance AS
-  SELECT "REPLACE THIS LINE WITH YOUR SOLUTION";
+-- height range for each fur type where all of the heights differ by no more than 30% from the average height
+create table low_variance as
+  select "replace this line with your solution";
 
